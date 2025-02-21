@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home - Salon Booking</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<header>
+    <h1>Find the Best Salons</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/login">Login</a>
+    </nav>
+</header>
+
+<input type="text" placeholder="Search by name or location">
+
+<div>
+    <h2>Salons</h2>
+    <div th:each="salon : ${salons}">
+        <h3 th:text="${salon.name}"></h3>
+        <p th:text="${salon.address}"></p>
+        <p>Rating: <span th:text="${salon.rating}"></span></p>
+        <a th:href="@{/salon/{id}(id=${salon.id})}">View Salon</a>
+    </div>
+</div>
+<link rel="stylesheet" href="/css/styles.css">
+
+</body>
+</html>

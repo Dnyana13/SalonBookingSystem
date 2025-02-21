@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Payment</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<h1>Payment</h1>
+
+<form th:action="@{/payment/process}" method="post">
+    <input type="hidden" name="bookingId" th:value="${booking.id}">
+
+    <label>Select Payment Method:</label>
+    <select name="paymentMethod">
+        <option value="credit">Credit/Debit Card</option>
+        <option value="upi">UPI</option>
+        <option value="netbanking">Net Banking</option>
+    </select>
+
+    <button type="submit">Pay Now</button>
+</form>
+
+<a th:href="@{/booking/{id}(id=${booking.id})}">Back</a>
+<link rel="stylesheet" href="/css/styles.css">
+
+</body>
+</html>

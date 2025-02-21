@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Booking Confirmation</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<h1>Booking Confirmed!</h1>
+
+<p>Salon: <span th:text="${booking.salon.name}"></span></p>
+<p>Service: <span th:text="${booking.service.name}"></span></p>
+<p>Date: <span th:text="${booking.date}"></span> at <span th:text="${booking.time}"></span></p>
+
+<a href="/dashboard">Go to Dashboard</a>
+
+<link rel="stylesheet" href="/css/styles.css">
+
+</body>
+</html>
